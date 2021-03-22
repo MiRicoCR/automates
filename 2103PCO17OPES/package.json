@@ -1,0 +1,22 @@
+{
+  "name": "customer",
+  "version": "1.0.0",
+  "description": "Formulario para la evaluación de tiendas en cuanto servicio, calidad y atención.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "npx nodemon index.js"
+  },
+  "author": "Dev-Loopers",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "jade": "^1.11.0",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
