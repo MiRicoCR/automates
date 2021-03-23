@@ -1,6 +1,8 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
 }
 
 .container{
@@ -13,15 +15,102 @@
     text-align: center;
 }
 
-#wave-bg{
-    height: 15%;
-    margin-top: -10px;
-    width: 110%;
+#square{
+    background-color: #AE84CC;
+    width: 100%;
+    height: 8%;
+    overflow: hidden;
+    z-index: 20;
 }
-
 #brand-logo{
     margin: 0 auto;
-    width: 20%;
-    height: 15%;
-    margin-top: -200px;
+    width: 23%;
+    height: 17%;
+    margin-top: 3%;
+}
+
+.body-form{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.body-form h3{
+    font-weight: 300;
+    font-size: 2.5rem;
+    margin-bottom: 80px;
+}
+
+#next-step{
+    background-color: #B065D1;
+    font-size: 2.3rem;
+    padding: 2rem 4rem;
+    color: #FFFFFF;
+    border-radius: 60px;
+    border: none;
+    margin-top: 50px;
+}
+
+#bubble{
+    opacity: 0.1;
+    width: 10%;
+    z-index: -1;
+    position: absolute;
+    top: 120;
+    left: 50;
+}
+
+#bubble1{
+    opacity: 0.1;
+    width: 10%;
+    z-index: -1;
+    position: absolute;
+    top: 200;
+    right: 50;
+}
+
+#bubble2{
+    opacity: 0.1;
+    width: 10%;
+    z-index: -1;
+    position: absolute;
+    top: 450;
+    left: 200;
+}
+
+#bubble3{
+    opacity: 0.1;
+    width: 10%;
+    z-index: -1;
+    position: absolute;
+    bottom: 280;
+    left: 150;
+}
+
+#bubble4{
+    opacity: 0.1;
+    width: 10%;
+    z-index: -1;
+    position: absolute;
+    bottom: 100;
+    right: 100;
+}
+
+.body-form label{
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.body-form label a{
+    color: #B065D1;
+}
+.body-form input[type=checkbox]{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(3); /* IE */
+  -moz-transform: scale(3); /* FF */
+  -webkit-transform: scale(3); /* Safari and Chrome */
+  -o-transform: scale(3); /* Opera */
+  transform: scale(3);
+  margin-right: 20px;
+  margin-left: -120px;
 }
