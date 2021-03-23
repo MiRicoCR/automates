@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+}
+
+.header-img{
+    align-content: center;
+    text-align: center;
+}
+
+#wave-bg{
+    height: 15%;
+    margin-top: -10px;
+    width: 110%;
+}
+
+#brand-logo{
+    margin: 0 auto;
+    width: 20%;
+    height: 15%;
+    margin-top: -200px;
+}

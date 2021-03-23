@@ -1,7 +1,12 @@
-.container
-  .header-img
-    img(src='wave-4.svg')
-  .body-form
-    h3 Pregunta n&uacute;mero 1
-  .footer-inf
-    code Texto copyright
+extends layout.pug
+
+block content
+    .container
+        .header-img
+            img(id='wave-bg' src='/Images/wave-6.svg')
+            img(id='brand-logo' src='/Images/Cassava Roots Logo.png')
+        .body-form
+            h3 ¿Qué opinas de nuestras bebidas?
+            input(type='radio' value='Bueno')
+        .footer-inf
+            code Texto copyright
