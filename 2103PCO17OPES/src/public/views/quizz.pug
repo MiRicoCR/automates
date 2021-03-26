@@ -1,7 +1,11 @@
-extends layout.pug
+extends layout-quizz.pug
 
 block content
-    #quiz-container
-        #quiz
-    button(id='btn-next') Siguiente
-    #results
+    .parent-container 
+        #quiz-container
+            #quiz
+        .buttonera
+            button(class="fButton" id='previous') Anterior
+            button(class="fButton" id='btnNext') Siguiente
+            button(class="fButton" id='submit') Terminar
+        #results
