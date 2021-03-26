@@ -17,4 +17,8 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/quizz', (req, res) => {
+    res.render('quizz');
+});
+
 module.exports = app;
