@@ -84,31 +84,31 @@
                 <div class="answers-rate">
                   <div class="frow-rate">
                     <label class="custom-rate">
-                        <input type="radio" name="1" value="1">
+                        <input id="rate1" type="checkbox" name="1" value="1">
                         <span class="rate-btn">
                             <img src="/Images/norate.svg"/>
                         </span>
                     </label>
                     <label class="custom-rate">
-                        <input type="radio" name="2" value="2">
+                        <input id="rate2" type="checkbox" name="2" value="2">
                         <span class="rate-btn">
                             <img src="/Images/norate.svg"/>
                         </span>
                     </label>
                     <label class="custom-rate">
-                        <input type="radio" name="3" value="3">
+                        <input id="rate3" type="checkbox" name="3" value="3">
                         <span class="rate-btn">
                             <img src="/Images/norate.svg"/>
                         </span>
                     </label>
                     <label class="custom-rate">
-                        <input type="radio" name="4" value="4">
+                        <input id="rate4" type="checkbox" name="4" value="4">
                         <span class="rate-btn">
                             <img src="/Images/norate.svg"/>
                         </span>
                     </label>
                     <label class="custom-rate">
-                        <input type="radio" name="5" value="5">
+                        <input id="rate5" type="checkbox" name="5" value="5">
                         <span class="rate-btn">
                             <img src="/Images/norate.svg"/>
                         </span>
@@ -191,7 +191,7 @@
     const submitButton = document.getElementById('submit');
     const myQuestions = [
       {
-        question: "¿Qué tanto te gustaron tus bebidas?",
+        question: "¿QUÉ TANTO TE GUSTARON TUS BEBIDAS?",
         answers: {
           Excelente: ["/Images/excelente.png", "EXCELENTE"],
           Bueno: ["/Images/bien.png", "BUENO"],
@@ -227,6 +227,13 @@
     const nextButton = document.getElementById("btnNext");
     const slides = document.querySelectorAll(".slide");
     let currentSlide = 0;
+
+    // Rating
+    const btnRate1 = document.getElementById('rate1');
+    const btnRate2 = document.getElementById('rate2');
+    const btnRate3 = document.getElementById('rate3');
+    const btnRate4 = document.getElementById('rate4');
+    const btnRate5 = document.getElementById('rate5');
   
     showSlide(currentSlide);
 
