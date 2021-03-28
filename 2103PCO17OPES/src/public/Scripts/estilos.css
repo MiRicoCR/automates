@@ -73,13 +73,15 @@
 }
 
 .disclaimer{
+    height: 100%;
+    max-height: 100%;
     overflow: hidden;
 }
 
 .disclaimer .logo{
     margin: 20px auto;
     width: 25%;
-    max-width: 25%;
+    max-width: 30%;
     height: 20%;
     max-height: 20%;
 }
@@ -269,35 +271,4 @@
     border: 2px solid #B065D1;
     box-shadow: 0px 0px 10px rgba(176, 101, 209, 0.9);
     outline: none;
-}
-
-.star-widget{
-    border: 1px solid red;
-    margin: 0 auto;
-}
-
-.star-widget input{
-    display: none;
-}
-
-.star-widget label{
-    font-size: 40px;
-    color: #dfb3f1;
-    padding: 10px;
-    float: right;
-    transition: all 0.2s ease;
-}
-
-input:not(:checked) ~ label:hover,
-input:not(:checked) ~ label:hover ~ label{
-    color: #B065D1;
-}
-
-input:checked ~ label{
-    color: #B065D1;
-}
-
-input#rate-5:checked ~ label{
-    color: #B065D1;
-    text-shadow: 0 0 10px rgba(176, 101, 209, 1);
 }

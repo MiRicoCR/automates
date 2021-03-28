@@ -1,11 +1,20 @@
 extends layout-quizz.pug
 
 block content
-    .parent-container 
-        #quiz-container
-            #quiz
-        .buttonera
-            button(class="fButton" id='previous') Anterior
-            button(class="fButton" id='btnNext') Siguiente
-            button(class="fButton" id='submit') Terminar
-        #results
+    .container
+        form(action='' method='get')
+            .slide.active-slide
+                .disclaimer
+                    img(class="logo" src='/Images/Logo_SinR.svg' alt='Logo de Cassava Roots' width='170px' height='200px')
+                    .titles
+                        h3 AYÚDANOS A MEJORAR Y RECIBE
+                        h2 ¡GRANDES PREMIOS!
+                    .covers
+                        img(id="astronaut" src='/Images/ast.png' alt='Astronauta de tapioca' width='220px' height='240px')
+                    label(id="agreement")
+                        input(id="privacyDoc" type='checkbox' value='Agree' onclick='validateTerms()')
+                        span He leído y acepto la 
+                    br
+                    .buttons
+                        button(id="startBtn" class="movButton disabled" disabled="true") Comenzar
+            

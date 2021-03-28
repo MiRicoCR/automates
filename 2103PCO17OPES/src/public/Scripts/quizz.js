@@ -1,244 +1,98 @@
-(function(){
+// Variables
+const checkTerms = document.getElementById('privacyDoc');
+const startBtn = document.getElementById('startBtn');
+const slides = document.querySelectorAll('.slide');
 
-    function test(){
-      alert("HOLAAA");
+const nextBtns = document.querySelectorAll('#nextBtn');
+const submitButton = document.querySelectorAll('#endBtn');
+
+const rate1 = document.getElementById('rate-1');
+const rate2 = document.getElementById('rate-2');
+const rate3 = document.getElementById('rate-3');
+const rate4 = document.getElementById('rate-4');
+const rate5 = document.getElementById('rate-5');
+
+const rowSeason = document.getElementById('reaction');
+
+let currentSlide = 0;
+
+function validateTerms(){
+  if (checkTerms.checked){
+    startBtn.classList.remove('disabled');
+    startBtn.removeAttribute('disabled');
+  }
+  else{
+    startBtn.classList.add('disabled');
+    startBtn.setAttribute('disabled', 'true');
+  }
+}
+
+function addReaction(number){
+  reactions = {
+    1: {
+      url: '../Images/superbad.svg',
+      text: 'NECESITA MEJORAR MUCHO'
+    },
+    2: {
+      url: '../Images/bad.svg',
+      text: 'TIENE ALGUNAS FALLAS'
+    },
+    3: {
+      url: '../Images/regular.svg',
+      text: 'NI BIEN NI MAL'
+    },
+    4: {
+      url: '../Images/good.svg',
+      text: 'ES BUENO'
+    },
+    5: {
+      url: '../Images/excellent.svg',
+      text: '¡DE LO MEJOR!'
     }
+  }
 
-    function buildQuiz(){
-      // variable to store the HTML output
-      const output = [];
-  
-      // for each question...
-      myQuestions.forEach(
-        (currentQuestion, questionNumber) => {
-  
-          // variable to store the list of possible answers
-          const answers = [];
-  
-          // and for each available answer...
-          
-          /*
-          for(letter in currentQuestion.answers){
-  
-            // ...add an HTML radio button
-            answers.push(
-              `<label class="custom-radio rd${letter}"><input type="radio" name="question${questionNumber}" value="${letter}"><span class="radio-btn"><img src="${currentQuestion.answers[letter][0]}"/><p id="form-sense">${currentQuestion.answers[letter][1]}</p></span></label>`
-            );
-            
-          }
-          
-  
-          // add this question and its answers to the output
-          output.push(
-            `<div class="slide">
-                <div class="question"><h3>${currentQuestion.question}</h3></div>
-                <div class="answers"> ${answers.join('')} </div>
-            </div>`
-          );
-          */
-         output.push(`
-            <div class="slide">
-                <div class="question"><h3>${currentQuestion.question}</h3></div>
-                <div class="answers">
-                  <div class="frow">
-                    <label class="custom-radio">
-                        <input type="radio" name="question${questionNumber}" value="excelente">
-                        <span class="radio-btn">
-                            <img src="/Images/excelente.png"/>
-                            <p id="form-sense">SUPER COOL</p>
-                        </span>
-                    </label>
-                    <label class="custom-radio">
-                        <input type="radio" name="question${questionNumber}" value="bueno">
-                        <span class="radio-btn">
-                            <img src="/Images/bien.png"/>
-                            <p id="form-sense">MÁS O MENOS</p>
-                        </span>
-                    </label>
-                  </div>
-                  <div class="srow">
-                    <label class="custom-radio">
-                        <input type="radio" name="question${questionNumber}" value="regular">
-                        <span class="radio-btn">
-                            <img src="/Images/regular.png"/>
-                            <p id="form-sense">MEDIO CHAFA</p>
-                        </span>
-                    </label>
-                    <label class="custom-radio">
-                        <input type="radio" name="question${questionNumber}" value="mal">
-                        <span class="radio-btn">
-                            <img src="/Images/mal.png"/>
-                            <p id="form-sense">NO ME LATIÓ</p>
-                        </span>
-                    </label>
-                  </div>
-                </div>
-            </div>
-         `);
-        }
-      );
+  rowSeason.innerHTML = `
+    <img src=${reactions[number]['url']} alt='emoji reaction'/>
+    <h3>${reactions[number]['text']}</h3>
+  `;
+}
 
-      output.push(`
-            <div class="slide">
-                <div class="question"><h3>¿Recomendarías a Cassava Roots?</h3></div>
-                <div class="answers-rate">
-                  <div class="frow-rate">
-                    <label class="custom-rate">
-                        <input id="rate1" type="checkbox" name="1" value="1">
-                        <span class="rate-btn">
-                            <img src="/Images/norate.svg"/>
-                        </span>
-                    </label>
-                    <label class="custom-rate">
-                        <input id="rate2" type="checkbox" name="2" value="2">
-                        <span class="rate-btn">
-                            <img src="/Images/norate.svg"/>
-                        </span>
-                    </label>
-                    <label class="custom-rate">
-                        <input id="rate3" type="checkbox" name="3" value="3">
-                        <span class="rate-btn">
-                            <img src="/Images/norate.svg"/>
-                        </span>
-                    </label>
-                    <label class="custom-rate">
-                        <input id="rate4" type="checkbox" name="4" value="4">
-                        <span class="rate-btn">
-                            <img src="/Images/norate.svg"/>
-                        </span>
-                    </label>
-                    <label class="custom-rate">
-                        <input id="rate5" type="checkbox" name="5" value="5">
-                        <span class="rate-btn">
-                            <img src="/Images/norate.svg"/>
-                        </span>
-                    </label>
-                  </div>
-                </div>
-            </div>
-        `);
-  
-      // finally combine our output list into one string of HTML and put it on the page
-      quizContainer.innerHTML = output.join('');
+function showSlide(n) {
+    slides[currentSlide].classList.remove('active-slide');
+    slides[n].classList.add('active-slide');
+    currentSlide = n;
+    
+    if(currentSlide === slides.length-1){
+        submitButton.forEach(button => {
+            button.style.display = 'inline-block';
+        });
+        nextBtns.forEach(button => {
+            button.style.display = 'none';
+        });
     }
-
-    function showResults(){
-
-      // gather answer containers from our quiz
-      const answerContainers = quizContainer.querySelectorAll('.answers');
-  
-      // keep track of user's answers
-      let numCorrect = 0;
-  
-      // for each question...
-      myQuestions.forEach( (currentQuestion, questionNumber) => {
-  
-        // find selected answer
-        const answerContainer = answerContainers[questionNumber];
-        const selector = `input[name=question${questionNumber}]:checked`;
-        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-  
-        // if answer is correct
-        if(userAnswer === currentQuestion.correctAnswer){
-          // add to the number of correct answers
-          numCorrect++;
-  
-          // color the answers green
-          answerContainers[questionNumber].style.color = 'lightgreen';
-        }
-        // if answer is wrong or blank
-        else{
-          // color the answers red
-          answerContainers[questionNumber].style.color = 'red';
-        }
-      });
-  
-      // show number of correct answers out of total
-      resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+    else{
+        submitButton.forEach(button => {
+            button.style.display = 'none';
+        });
+        nextBtns.forEach(button => {
+            button.style.display = 'inline-block';
+        });
     }
+}
 
-    function showSlide(n) {
-        slides[currentSlide].classList.remove('active-slide');
-        slides[n].classList.add('active-slide');
-        currentSlide = n;
-        if(currentSlide === 0){
-          previousButton.style.display = 'none';
-        }
-        else{
-          previousButton.style.display = 'inline-block';
-        }
-        if(currentSlide === slides.length-1){
-          nextButton.style.display = 'none';
-          submitButton.style.display = 'inline-block';
-        }
-        else{
-          nextButton.style.display = 'inline-block';
-          submitButton.style.display = 'none';
-        }
-    }
+function nextSlide(){
+  showSlide(currentSlide + 1);
+}
 
-    function showNextSlide() {
-      showSlide(currentSlide + 1);
-    }
-  
-    function showPreviousSlide() {
-      showSlide(currentSlide - 1);
-    }
+// Events
+startBtn.addEventListener('click', nextSlide);
+checkTerms.addEventListener('change', validateTerms, true);
+nextBtns.forEach(button => {
+    button.addEventListener('click', nextSlide);
+});
 
-    // Variables
-    const quizContainer = document.getElementById('quiz');
-    const resultsContainer = document.getElementById('results');
-    const submitButton = document.getElementById('submit');
-    const myQuestions = [
-      {
-        question: "¿QUÉ TANTO TE GUSTARON TUS BEBIDAS?",
-        answers: {
-          Excelente: ["/Images/excelente.png", "EXCELENTE"],
-          Bueno: ["/Images/bien.png", "BUENO"],
-          Regular: ["/Images/regular.png", "REGULAR"],
-          Mal: ["/Images/mal.png", "MALO"]
-        }
-      },
-      {
-        question: "¿Tardaron mucho en entregar tu pedido?",
-        answers: {
-          Excelente: ["/Images/excelente.png", "EXCELENTE"],
-          Bueno: ["/Images/bien.png", "BUENO"],
-          Regular: ["/Images/regular.png", "REGULAR"],
-          Mal: ["/Images/mal.png", "MALO"]
-        }
-      },
-      {
-        question: "¿Te atendieron bien?",
-        answers: {
-          Excelente: ["/Images/excelente.png", "EXCELENTE"],
-          Bueno: ["/Images/bien.png", "BUENO"],
-          Regular: ["/Images/regular.png", "REGULAR"],
-          Mal: ["/Images/mal.png", "MALO"]
-        }
-      }
-    ];
-  
-    // Kick things off
-    buildQuiz();
-
-    // Pagination
-    const previousButton = document.getElementById("previous");
-    const nextButton = document.getElementById("btnNext");
-    const slides = document.querySelectorAll(".slide");
-    let currentSlide = 0;
-
-    // Rating
-    const btnRate1 = document.getElementById('rate1');
-    const btnRate2 = document.getElementById('rate2');
-    const btnRate3 = document.getElementById('rate3');
-    const btnRate4 = document.getElementById('rate4');
-    const btnRate5 = document.getElementById('rate5');
-  
-    showSlide(currentSlide);
-
-    // Event listeners
-    submitButton.addEventListener('click', showResults);
-    previousButton.addEventListener("click", showPreviousSlide);
-    nextButton.addEventListener("click", showNextSlide);
-  })();
+rate1.addEventListener('change', addReaction(1));
+rate2.addEventListener('change', addReaction(2));
+rate3.addEventListener('change', addReaction(3));
+rate4.addEventListener('change', addReaction(4));
+rate5.addEventListener('change', addReaction(5));

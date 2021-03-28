@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="/Styles/quizzStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <title>Cassava Quizz</title>
 </head>
 <body>
     <div class="container">
-        <div class="slide active-slide">
+        <div class="slide">
             <div class="disclaimer">
                 <img class="logo" src="../Images/Logo_SinR.svg" alt="Logo de Cassava Roots" width="170px" height="200px">
                 <div class="titles">
@@ -21,7 +22,7 @@
                     <img id="astronaut" src="../Images/ast.png" alt="Astronauta de tapioca" width="220px" height="240px">
                 </div>
                 <label id="agreement">
-                    <input id="privacyDoc" type="checkbox" value="Agree" onclick="validateTerms()"/>
+                    <input id="privacyDoc" type="checkbox" value="Agree"/>
                     <span>He leído y acepto la <a href="#">política de privacidad</a>.</span>
                 </label>
                 <br/>
@@ -71,7 +72,7 @@
                         <input type="checkbox" name="comment" id="comment">
                         <span class="check-desc">Agregar un comentario.</span>
                     </label>
-                    <input class="hiden" type="text" name="description" id="txtDesc">
+                    <input class="hiden" type="text" name="descBebida" id="txtDescBebida">
                 </div>
             </div>
             <div class="movement">
@@ -119,7 +120,7 @@
                         <input type="checkbox" name="comment" id="comment">
                         <span>Agregar un comentario.</span>
                     </label>
-                    <input class="hiden" type="text" name="description" id="txtDesc">
+                    <input class="hiden" type="text" name="descAtencion" id="txtDescAtencion">
                 </div>
             </div>
             <div class="movement">
@@ -167,7 +168,7 @@
                         <input type="checkbox" name="comment" id="comment">
                         <span>Agregar un comentario.</span>
                     </label>
-                    <input class="hiden" type="text" name="description" id="txtDesc">
+                    <input class="hiden" type="text" name="descTiempo" id="txtDescTiempo">
                 </div>
             </div>
             <div class="movement">
@@ -175,56 +176,30 @@
                 <button class="movButton" id="endBtn">Terminar</button>
             </div>
         </div>
-        <div class="slide quizzQuestion">
+        <div class="slide quizzQuestion active-slide">
             <h2>CASSAVA ROOTS ES:</h2>
             <div class="answers">
-                <div class="first-row">
-                    <span>EMOJI SECTION</span>
-                    <p>TEXT DESCRIPTION</p>
+                <div class="first-row" id="reaction">
+                    
                 </div>
-                <div class="second-row">
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="1">
-                        <span class="radio-btn">
-                            <img src="../Images/norate.svg"/>
-                            <p id="form-sense">MEDIO CHAFA</p>
-                        </span>
-                    </label>
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="2">
-                        <span class="radio-btn">
-                            <img src="../Images/norate.svg"/>
-                            <p id="form-sense">MEDIO CHAFA</p>
-                        </span>
-                    </label>
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="3">
-                        <span class="radio-btn">
-                            <img src="../Images/norate.svg"/>
-                            <p id="form-sense">MEDIO CHAFA</p>
-                        </span>
-                    </label>
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="4">
-                        <span class="radio-btn">
-                            <img src="../Images/norate.svg"/>
-                            <p id="form-sense">MEDIO CHAFA</p>
-                        </span>
-                    </label>
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="5">
-                        <span class="radio-btn">
-                            <img src="../Images/norate.svg"/>
-                            <p id="form-sense">MEDIO CHAFA</p>
-                        </span>
-                    </label>
+                <div class="star-widget">
+                    <input type="radio" name="rate" id="rate-5">
+                    <label for="rate-5" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-4">
+                    <label for="rate-4" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-3">
+                    <label for="rate-3" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-2">
+                    <label for="rate-2" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-1">
+                    <label for="rate-1" class="fas fa-star"></label>
                 </div>
                 <div class="comments">
                     <label class="add-comment">
                         <input type="checkbox" name="comment" id="comment">
                         <span class="check-desc">Agregar un comentario.</span>
                     </label>
-                    <input class="hiden" type="text" name="description" id="txtDesc">
+                    <input class="hiden" type="text" name="descCassava" id="txtDescCassava">
                 </div>
             </div>
             <div class="movement">
@@ -255,6 +230,6 @@
             </div>
         </div>
     </div>
-    <script src="./testing.js"></script>
+    <script src="/Scripts/quizz.js"></script>
 </body>
 </html>
