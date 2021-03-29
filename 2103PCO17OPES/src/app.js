@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
+const bodyparser = require('body-parser');
 const path = require('path');
 
 const app = express();
@@ -14,6 +15,8 @@ app.engine('.html', require('ejs').renderFile);
 
 app.use(morgan('dev'));
 app.use(helmet());
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({extended: true}));
 
 app.use('/', routeStore);
 

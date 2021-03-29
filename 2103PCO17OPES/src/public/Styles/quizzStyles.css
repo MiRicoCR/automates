@@ -228,9 +228,16 @@
 
 .comments input[type='text']{
     width: 100%;
-    height: 2rem;
-    border: none;
+    height: 3rem;
+    margin: 20px 0px;
+    border: 1px solid #B065D1;
+    border-radius: 10px;
 
+}
+
+.comments input[type='text']:focus{
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(176, 101, 209, 0.9);
 }
 
 .customerInfo .greetings{
@@ -272,8 +279,8 @@
 }
 
 .star-widget{
-    border: 1px solid red;
     margin: 0 auto;
+    width: 90%;
 }
 
 .star-widget input{
@@ -300,4 +307,75 @@ input:checked ~ label{
 input#rate-5:checked ~ label{
     color: #B065D1;
     text-shadow: 0 0 10px rgba(176, 101, 209, 1);
+}
+
+.row-reaction{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    transition: all ease-in 1s;
+    width:90%;
+    margin: 0 auto;
+}
+
+.row-reaction img{
+    width: 40%;
+    margin: 0 auto;
+}
+
+.row-reaction h3{
+    color: #933eb8;
+    font-size: 1.2rem;
+}
+
+.cont-reward{
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.cont-reward .box-img{
+    width: 250px;
+    height: 250px;
+    margin: 50px auto;
+    background-color: #B065D1;
+    box-shadow: 0px 0px 50px rgba(176, 101, 209, 0.6);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.cont-reward .box-img img{
+    width: 70%;
+    margin: auto;
+}
+
+.cont-reward .titles{
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.cont-reward .titles h1{
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.cont-reward .titles h3{
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin: 20px auto;
+}
+
+.cont-reward .titles h3 b{
+    font-weight: 700;
+    font-size: 1.1rem;
 }

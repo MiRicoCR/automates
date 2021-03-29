@@ -11,224 +11,215 @@
 </head>
 <body>
     <div class="container">
-        <div class="slide">
-            <div class="disclaimer">
-                <img class="logo" src="../Images/Logo_SinR.svg" alt="Logo de Cassava Roots" width="170px" height="200px">
-                <div class="titles">
-                    <h3>AYÚDANOS A MEJORAR Y RECIBE</h3>
-                    <h2>¡GRANDES PREMIOS!</h2>
-                </div>
-                <div class="covers">
-                    <img id="astronaut" src="../Images/ast.png" alt="Astronauta de tapioca" width="220px" height="240px">
-                </div>
-                <label id="agreement">
-                    <input id="privacyDoc" type="checkbox" value="Agree"/>
-                    <span>He leído y acepto la <a href="#">política de privacidad</a>.</span>
-                </label>
-                <br/>
-                <div class="buttons">
-                    <button class="movButton disabled" id="startBtn" disabled>Comenzar</button>
-                </div>
-            </div>
-        </div>
-        <div class="slide quizzQuestion">
-            <h2>¿TE GUSTÓ TU BEBIDA?</h2>
-            <div class="answers">
-                <div class="first-row">
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="excelente">
-                        <span class="radio-btn">
-                            <img src="../Images/excelente.png"/>
-                            <p id="form-sense">SUPER COOL</p>
-                        </span>
+        <form action="" id="formFinal" method="post">
+            <div class="slide active-slide">
+                <div class="disclaimer">
+                    <img class="logo" src="../Images/Logo_SinR.svg" alt="Logo de Cassava Roots" width="170px" height="200px">
+                    <div class="titles">
+                        <h3>AYÚDANOS A MEJORAR Y RECIBE</h3>
+                        <h2>¡GRANDES PREMIOS!</h2>
+                    </div>
+                    <div class="covers">
+                        <img id="astronaut" src="../Images/ast.png" alt="Astronauta de tapioca" width="220px" height="240px">
+                    </div>
+                    <label id="agreement">
+                        <input id="privacyDoc" name="Advertisement" type="checkbox" value="Agree"/>
+                        <span>He leído y acepto la <a href="#">política de privacidad</a>.</span>
                     </label>
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="bueno">
-                        <span class="radio-btn">
-                            <img src="../Images/bien.png"/>
-                            <p id="form-sense">MÁS O MENOS</p>
-                        </span>
-                    </label>
-                </div>
-                <br/>
-                <div class="second-row">
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="regular">
-                        <span class="radio-btn">
-                            <img src="../Images/regular.png"/>
-                            <p id="form-sense">MEDIO CHAFA</p>
-                        </span>
-                    </label>
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="malo">
-                        <span class="radio-btn">
-                            <img src="../Images/mal.png"/>
-                            <p id="form-sense">NO ME LATIÓ</p>
-                        </span>
-                    </label>
-                </div>
-                <div class="comments">
-                    <label class="add-comment">
-                        <input type="checkbox" name="comment" id="comment">
-                        <span class="check-desc">Agregar un comentario.</span>
-                    </label>
-                    <input class="hiden" type="text" name="descBebida" id="txtDescBebida">
+                    <br/>
+                    <div class="buttons">
+                        <button class="movButton disabled" id="startBtn" disabled>Comenzar</button>
+                    </div>
                 </div>
             </div>
-            <div class="movement">
-                <button class="movButton" id="nextBtn">Siguiente</button>
-                <button class="movButton" id="endBtn">Terminar</button>
-            </div>
-        </div>
-        <div class="slide quizzQuestion">
-            <h2>¿CÓMO TE ATENDIMOS?</h2>
-            <div class="answers">
-                <div class="first-row">
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="excelente">
-                        <span class="radio-btn">
-                            <img src="../Images/excelente.png"/>
-                            <p id="form-sense">SUPER COOL</p>
-                        </span>
-                    </label>
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="bueno">
-                        <span class="radio-btn">
-                            <img src="../Images/bien.png"/>
-                            <p id="form-sense">MÁS O MENOS</p>
-                        </span>
-                    </label>
+            <div class="slide quizzQuestion">
+                <h2>¿TE GUSTÓ TU BEBIDA?</h2>
+                <div class="answers">
+                    <div class="first-row">
+                        <label class="custom-radio">
+                            <input type="radio" name="Bebida" value="excelente">
+                            <span class="radio-btn">
+                                <img src="../Images/excelente.png"/>
+                                <p id="form-sense">SUPER COOL</p>
+                            </span>
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="Bebida" value="bueno">
+                            <span class="radio-btn">
+                                <img src="../Images/bien.png"/>
+                                <p id="form-sense">MÁS O MENOS</p>
+                            </span>
+                        </label>
+                    </div>
+                    <br/>
+                    <div class="second-row">
+                        <label class="custom-radio">
+                            <input type="radio" name="Bebida" value="regular">
+                            <span class="radio-btn">
+                                <img src="../Images/regular.png"/>
+                                <p id="form-sense">MEDIO CHAFA</p>
+                            </span>
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="Bebida" value="malo">
+                            <span class="radio-btn">
+                                <img src="../Images/mal.png"/>
+                                <p id="form-sense">NO ME LATIÓ</p>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="comments">
+                        <label class="add-comment">
+                            <input type="checkbox" name="CommentChoice" id="commentBebida">
+                            <span class="check-desc">Agregar un comentario.</span>
+                        </label>
+                        <input class="hiden" type="text" name="CommentarioBebida" id="txtDescBebida">
+                    </div>
                 </div>
-                <div class="second-row">
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="regular">
-                        <span class="radio-btn">
-                            <img src="../Images/regular.png"/>
-                            <p id="form-sense">MEDIO CHAFA</p>
-                        </span>
-                    </label>
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="malo">
-                        <span class="radio-btn">
-                            <img src="../Images/mal.png"/>
-                            <p id="form-sense">NO ME LATIÓ</p>
-                        </span>
-                    </label>
-                </div>
-                <div class="comments">
-                    <label class="add-comment">
-                        <input type="checkbox" name="comment" id="comment">
-                        <span>Agregar un comentario.</span>
-                    </label>
-                    <input class="hiden" type="text" name="descAtencion" id="txtDescAtencion">
-                </div>
-            </div>
-            <div class="movement">
-                <button class="movButton" id="nextBtn">Siguiente</button>
-                <button class="movButton" id="endBtn">Terminar</button>
-            </div>
-        </div>
-        <div class="slide quizzQuestion">
-            <h2>EL TIEMPO DE ESPERA FUE:</h2>
-            <div class="answers">
-                <div class="first-row">
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="excelente">
-                        <span class="radio-btn">
-                            <img src="../Images/excelente.png"/>
-                            <p id="form-sense">SUPER COOL</p>
-                        </span>
-                    </label>
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="bueno">
-                        <span class="radio-btn">
-                            <img src="../Images/bien.png"/>
-                            <p id="form-sense">MÁS O MENOS</p>
-                        </span>
-                    </label>
-                </div>
-                <div class="second-row">
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="regular">
-                        <span class="radio-btn">
-                            <img src="../Images/regular.png"/>
-                            <p id="form-sense">MEDIO CHAFA</p>
-                        </span>
-                    </label>
-                    <label class="custom-radio">
-                        <input type="radio" name="question-radio" value="malo">
-                        <span class="radio-btn">
-                            <img src="../Images/mal.png"/>
-                            <p id="form-sense">NO ME LATIÓ</p>
-                        </span>
-                    </label>
-                </div>
-                <div class="comments">
-                    <label class="add-comment">
-                        <input type="checkbox" name="comment" id="comment">
-                        <span>Agregar un comentario.</span>
-                    </label>
-                    <input class="hiden" type="text" name="descTiempo" id="txtDescTiempo">
+                <div class="movement">
+                    <button class="movButton" id="nextBtn">Siguiente</button>
                 </div>
             </div>
-            <div class="movement">
-                <button class="movButton" id="nextBtn">Siguiente</button>
-                <button class="movButton" id="endBtn">Terminar</button>
-            </div>
-        </div>
-        <div class="slide quizzQuestion active-slide">
-            <h2>CASSAVA ROOTS ES:</h2>
-            <div class="answers">
-                <div class="first-row" id="reaction">
-                    
+            <div class="slide quizzQuestion">
+                <h2>¿CÓMO TE ATENDIMOS?</h2>
+                <div class="answers">
+                    <div class="first-row">
+                        <label class="custom-radio">
+                            <input type="radio" name="Atencion" value="excelente">
+                            <span class="radio-btn">
+                                <img src="../Images/excelente.png"/>
+                                <p id="form-sense">SUPER COOL</p>
+                            </span>
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="Atencion" value="bueno">
+                            <span class="radio-btn">
+                                <img src="../Images/bien.png"/>
+                                <p id="form-sense">MÁS O MENOS</p>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="second-row">
+                        <label class="custom-radio">
+                            <input type="radio" name="Atencion" value="regular">
+                            <span class="radio-btn">
+                                <img src="../Images/regular.png"/>
+                                <p id="form-sense">MEDIO CHAFA</p>
+                            </span>
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="Atencion" value="malo">
+                            <span class="radio-btn">
+                                <img src="../Images/mal.png"/>
+                                <p id="form-sense">NO ME LATIÓ</p>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="comments">
+                        <label class="add-comment">
+                            <input type="checkbox" name="comment" id="commentAtencion">
+                            <span>Agregar un comentario.</span>
+                        </label>
+                        <input class="hiden" type="text" name="descAtencion" id="txtDescAtencion">
+                    </div>
                 </div>
-                <div class="star-widget">
-                    <input type="radio" name="rate" id="rate-5">
-                    <label for="rate-5" class="fas fa-star"></label>
-                    <input type="radio" name="rate" id="rate-4">
-                    <label for="rate-4" class="fas fa-star"></label>
-                    <input type="radio" name="rate" id="rate-3">
-                    <label for="rate-3" class="fas fa-star"></label>
-                    <input type="radio" name="rate" id="rate-2">
-                    <label for="rate-2" class="fas fa-star"></label>
-                    <input type="radio" name="rate" id="rate-1">
-                    <label for="rate-1" class="fas fa-star"></label>
-                </div>
-                <div class="comments">
-                    <label class="add-comment">
-                        <input type="checkbox" name="comment" id="comment">
-                        <span class="check-desc">Agregar un comentario.</span>
-                    </label>
-                    <input class="hiden" type="text" name="descCassava" id="txtDescCassava">
+                <div class="movement">
+                    <button class="movButton" id="nextBtn">Siguiente</button>
                 </div>
             </div>
-            <div class="movement">
-                <button class="movButton" id="nextBtn">Siguiente</button>
-                <button class="movButton" id="endBtn">Terminar</button>
+            <div class="slide quizzQuestion">
+                <h2>EL TIEMPO DE ESPERA FUE:</h2>
+                <div class="answers">
+                    <div class="first-row">
+                        <label class="custom-radio">
+                            <input type="radio" name="Tiempo" value="excelente">
+                            <span class="radio-btn">
+                                <img src="../Images/excelente.png"/>
+                                <p id="form-sense">SUPER COOL</p>
+                            </span>
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="Tiempo" value="bueno">
+                            <span class="radio-btn">
+                                <img src="../Images/bien.png"/>
+                                <p id="form-sense">MÁS O MENOS</p>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="second-row">
+                        <label class="custom-radio">
+                            <input type="radio" name="Tiempo" value="regular">
+                            <span class="radio-btn">
+                                <img src="../Images/regular.png"/>
+                                <p id="form-sense">MEDIO CHAFA</p>
+                            </span>
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="Tiempo" value="malo">
+                            <span class="radio-btn">
+                                <img src="../Images/mal.png"/>
+                                <p id="form-sense">NO ME LATIÓ</p>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="comments">
+                        <label class="add-comment">
+                            <input type="checkbox" name="comment" id="commentTiempo">
+                            <span>Agregar un comentario.</span>
+                        </label>
+                        <input class="hiden" type="text" name="descTiempo" id="txtDescTiempo">
+                    </div>
+                </div>
+                <div class="movement">
+                    <button class="movButton" id="nextBtn">Siguiente</button>
+                </div>
             </div>
-        </div>
-        <div class="slide customerInfo">
-            <div class="greetings">
-                <h2>¡GRACIAS ROCKSTER!</h2>
-                <p>Queremos seguir ofreciéndote una mejor experiencia.</p><br/>
-                <p>Por favor déjanos tus datos para seguir en contacto y ofrecerte mejores recompensas.</p>
+            <div class="slide quizzQuestion">
+                <h2>CASSAVA ROOTS ES:</h2>
+                <div class="answers">
+                    <div class="row-reaction" id="reaction">
+                        
+                    </div>
+                    <div class="star-widget">
+                        <input type="radio" name="Rate" value="5" id="rate-5">
+                        <label for="rate-5" class="fas fa-star"></label>
+                        <input type="radio" name="Rate" value="4" id="rate-4">
+                        <label for="rate-4" class="fas fa-star"></label>
+                        <input type="radio" name="Rate" value="3" id="rate-3">
+                        <label for="rate-3" class="fas fa-star"></label>
+                        <input type="radio" name="Rate" value="2" id="rate-2">
+                        <label for="rate-2" class="fas fa-star"></label>
+                        <input type="radio" name="Rate" value="1" id="rate-1">
+                        <label for="rate-1" class="fas fa-star"></label>
+                    </div>
+                    <div class="comments">
+                        <label class="add-comment">
+                            <input type="checkbox" name="comment" id="commentCassava">
+                            <span class="check-desc">Agregar un comentario.</span>
+                        </label>
+                        <input class="hiden" type="text" name="descCassava" id="txtDescCassava">
+                    </div>
+                </div>
+                <div class="movement">
+                    <button class="movButton" id="nextBtn">Siguiente</button>
+                </div>
             </div>
-            <div class="data">
-                <input type="text" name="fullName" id="txtName" placeholder="Nombre completo" autofocus/><br/><br/>
-                <input type="email" name="email" id="email" placeholder="Correo electrónico"/>
+            <div class="slide customerInfo">
+                <div class="greetings">
+                    <h2>¡GRACIAS ROCKSTER!</h2>
+                    <p>Queremos seguir ofreciéndote una mejor experiencia.</p><br/>
+                    <p>Por favor déjanos tus datos para seguir en contacto y ofrecerte mejores recompensas.</p>
+                </div>
+                <div class="data">
+                    <input type="text" name="fullName" id="txtName" placeholder="Nombre completo" autocomplete="false" required autofocus/><br/><br/>
+                    <input type="email" name="email" id="email" placeholder="Correo electrónico" autocomplete="false" required/>
+                </div>
+                <div class="movement">
+                    <button class="movButton" id="nextBtn">Siguiente</button>
+                    <button class="movButton" type="submit" id="endBtnFinal">Terminar</button>
+                </div>
             </div>
-            <div class="comments">
-                <label class="add-comment">
-                    <input type="checkbox" name="comment" id="comment">
-                    <span>Agregar un comentario.</span>
-                </label>
-                <input class="hiden" type="text" name="description" id="txtDesc">
-            </div>
-            <div class="movement">
-                <button class="movButton" id="nextBtn">Siguiente</button>
-                <button class="movButton" id="endBtn">Terminar</button>
-            </div>
-        </div>
+        </form>
     </div>
     <script src="/Scripts/quizz.js"></script>
 </body>
