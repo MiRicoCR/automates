@@ -5,7 +5,7 @@ import json
 class Scanner:
 
     def __init__(self):
-        self.WansoftFile = "C:/Users/misae/Downloads/ReporteDetalleDeVentas20210323.xls"
+        self.WansoftFile = "C:/Users/misae/Downloads/ReporteDetalleDeVentas20210329.xls"
         self.TableFile = pd.read_excel(self.WansoftFile, sheet_name="Detalle de ventas", header=8, usecols="D,E,G,L,N,T,U,V,Z,AA,AB,AC,AE,AD,AG,AM")
         self.Data = {}
         self.OutputFile = "C:/Users/misae/OneDrive/Escritorio/Códigos/ventas-gral/Reporte"

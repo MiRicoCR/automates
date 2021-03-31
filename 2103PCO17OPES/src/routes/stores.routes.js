@@ -5,6 +5,7 @@ const ctrlr = require('../controllers/form.controller');
 
 Router.get('/customer/:store', ctrlr.instanceQuizz);
 Router.post('/reward', ctrlr.insertData);
-Router.get('/reward', (req, res) => {res.render('reward.html')});
+Router.get('/reward', ctrlr.showReward);
+Router.get('/testing', ctrlr.showReward);
 
 module.exports = Router;

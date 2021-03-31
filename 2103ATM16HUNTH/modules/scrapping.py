@@ -50,7 +50,11 @@ class Scrapping:
             sleep(3)
 
             # Poner los filtros de fechas.
+<<<<<<< HEAD
             self.sDate = date(2021, 3, 22)
+=======
+            self.sDate = date(2021, 3, 28)
+>>>>>>> d115b1f032e56d7d7ec2a616483141f04c708ef5
             start_filter_date = "document.getElementById('startDate').setAttribute('value', '{filter}')".format(filter=str(self.sDate))
             end_filter_date = "document.getElementById('endDate').setAttribute('value', '{filter}')".format(filter=str(self.sDate))
             self.Driver.execute_script(start_filter_date)

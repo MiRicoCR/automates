@@ -28,7 +28,19 @@ allButtons.forEach(button => {
   })
 });
 
+let bebidaRds = document.forms["formFinal"].elements["Bebida"];
+let atencionRds = document.forms["formFinal"].elements["Atencion"]
+let tiempoRds = document.forms["formFinal"].elements["Tiempo"]
+let rateRds = document.forms["formFinal"].elements["Rate"]
+
+let nextBtnBebida = document.getElementsByName('next1')[0];
+let nextBtnAtencion = document.getElementsByName('next2')[0];
+let nextBtnTiempo = document.getElementsByName('next3')[0];
+let nextBtnCassava = document.getElementsByName('next4')[0];
+
 let currentSlide = 0;
+
+let numAnswers = 0;
 
 // Bebida
 const rdsBebida = document.getElementsByName('Bebida');
@@ -227,21 +239,70 @@ rate3.addEventListener('click', () =>{addReaction(3)});
 rate4.addEventListener('click', () =>{addReaction(4)});
 rate5.addEventListener('click', () =>{addReaction(5)});
 
+
+function switchButton(name){
+  if(name == "Bebida"){
+    alert("click");
+  }
+  else if(name == "Atencion"){
+
+  }
+  else if(name == "Tiempo"){
+
+  }
+  else if(name == "Rate"){
+
+  }
+}
+
+bebidaRds.forEach(radio => {
+  radio.onclick = () => {
+    nextBtnBebida.classList.remove('disabled');
+    nextBtnBebida.removeAttribute('disabled');
+  };
+});
+
+atencionRds.forEach(radio => {
+  radio.onclick = () => {
+    nextBtnAtencion.classList.remove('disabled');
+    nextBtnAtencion.removeAttribute('disabled');
+  };
+});
+
+tiempoRds.forEach(radio => {
+  radio.onclick = () => {
+    nextBtnTiempo.classList.remove('disabled');
+    nextBtnTiempo.removeAttribute('disabled');
+  };
+});
+
+rateRds.forEach(radio => {
+  radio.onclick = () => {
+    nextBtnCassava.classList.remove('disabled');
+    nextBtnCassava.removeAttribute('disabled');
+  };
+});
+
+let mensaje;
+
 //endBtnFinal.addEventListener('click', sendAnswers, false);
-endBtnFinal.addEventListener('click', (event) => {
+endBtnFinal.addEventListener('click', async (event) => {
   event.preventDefault();
 
   let formData = new FormData(formAns);
   let data = joinData();
-
-  let url = '/reward';
-
-  fetch('https://localhost:1337/reward', {
+  let params = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     },
     body: JSON.stringify(data)
+  };
+  let url = '/reward';
+
+  await fetch('https://localhost:1337/reward', params).then(function(response) {return response.json();}).then(function(jsonData) {
+    console.log(jsonData['data']);
+    window.location.href = `https://localhost:1337/${jsonData['data']}`;
   });
 });

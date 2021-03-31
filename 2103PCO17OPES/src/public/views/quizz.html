@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/Styles/quizzStyles.css">
@@ -11,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="" id="formFinal" method="post">
+        <form action="" id="formFinal" name="formFinal" method="POST">
             <div class="slide active-slide">
                 <div class="disclaimer">
                     <img class="logo" src="../Images/Logo_SinR.svg" alt="Logo de Cassava Roots" width="170px" height="200px">
@@ -37,14 +38,14 @@
                 <div class="answers">
                     <div class="first-row">
                         <label class="custom-radio">
-                            <input type="radio" name="Bebida" value="excelente">
+                            <input type="radio" name="Bebida" id="rdBedida" value="excelente">
                             <span class="radio-btn">
                                 <img src="../Images/excelente.png"/>
                                 <p id="form-sense">SUPER COOL</p>
                             </span>
                         </label>
                         <label class="custom-radio">
-                            <input type="radio" name="Bebida" value="bueno">
+                            <input type="radio" name="Bebida" id="rdBedida" value="bueno">
                             <span class="radio-btn">
                                 <img src="../Images/bien.png"/>
                                 <p id="form-sense">MÁS O MENOS</p>
@@ -54,14 +55,14 @@
                     <br/>
                     <div class="second-row">
                         <label class="custom-radio">
-                            <input type="radio" name="Bebida" value="regular">
+                            <input type="radio" name="Bebida" id="rdBedida" value="regular">
                             <span class="radio-btn">
                                 <img src="../Images/regular.png"/>
                                 <p id="form-sense">MEDIO CHAFA</p>
                             </span>
                         </label>
                         <label class="custom-radio">
-                            <input type="radio" name="Bebida" value="malo">
+                            <input type="radio" name="Bebida" id="rdBedida" value="malo">
                             <span class="radio-btn">
                                 <img src="../Images/mal.png"/>
                                 <p id="form-sense">NO ME LATIÓ</p>
@@ -77,7 +78,7 @@
                     </div>
                 </div>
                 <div class="movement">
-                    <button class="movButton" id="nextBtn">Siguiente</button>
+                    <button class="movButton disabled" id="nextBtn" name="next1" disabled>Siguiente</button>
                 </div>
             </div>
             <div class="slide quizzQuestion">
@@ -85,14 +86,14 @@
                 <div class="answers">
                     <div class="first-row">
                         <label class="custom-radio">
-                            <input type="radio" name="Atencion" value="excelente">
+                            <input type="radio" name="Atencion" id="rdAtencion" value="excelente">
                             <span class="radio-btn">
                                 <img src="../Images/excelente.png"/>
                                 <p id="form-sense">SUPER COOL</p>
                             </span>
                         </label>
                         <label class="custom-radio">
-                            <input type="radio" name="Atencion" value="bueno">
+                            <input type="radio" name="Atencion" id="rdAtencion" value="bueno">
                             <span class="radio-btn">
                                 <img src="../Images/bien.png"/>
                                 <p id="form-sense">MÁS O MENOS</p>
@@ -101,14 +102,14 @@
                     </div>
                     <div class="second-row">
                         <label class="custom-radio">
-                            <input type="radio" name="Atencion" value="regular">
+                            <input type="radio" name="Atencion" id="rdAtencion" value="regular">
                             <span class="radio-btn">
                                 <img src="../Images/regular.png"/>
                                 <p id="form-sense">MEDIO CHAFA</p>
                             </span>
                         </label>
                         <label class="custom-radio">
-                            <input type="radio" name="Atencion" value="malo">
+                            <input type="radio" name="Atencion" id="rdAtencion" value="malo">
                             <span class="radio-btn">
                                 <img src="../Images/mal.png"/>
                                 <p id="form-sense">NO ME LATIÓ</p>
@@ -124,7 +125,7 @@
                     </div>
                 </div>
                 <div class="movement">
-                    <button class="movButton" id="nextBtn">Siguiente</button>
+                    <button class="movButton disabled" id="nextBtn" name="next2" disabled>Siguiente</button>
                 </div>
             </div>
             <div class="slide quizzQuestion">
@@ -171,7 +172,7 @@
                     </div>
                 </div>
                 <div class="movement">
-                    <button class="movButton" id="nextBtn">Siguiente</button>
+                    <button class="movButton disabled" id="nextBtn" name="next3" disabled>Siguiente</button>
                 </div>
             </div>
             <div class="slide quizzQuestion">
@@ -201,7 +202,7 @@
                     </div>
                 </div>
                 <div class="movement">
-                    <button class="movButton" id="nextBtn">Siguiente</button>
+                    <button class="movButton disabled" id="nextBtn" name="next4" disabled>Siguiente</button>
                 </div>
             </div>
             <div class="slide customerInfo">
@@ -211,11 +212,10 @@
                     <p>Por favor déjanos tus datos para seguir en contacto y ofrecerte mejores recompensas.</p>
                 </div>
                 <div class="data">
-                    <input type="text" name="fullName" id="txtName" placeholder="Nombre completo" autocomplete="false" required autofocus/><br/><br/>
-                    <input type="email" name="email" id="email" placeholder="Correo electrónico" autocomplete="false" required/>
+                    <input type="text" name="fullName" id="txtName" placeholder="Nombre completo" required autofocus/><br/><br/>
+                    <input type="number" name="email" id="email" placeholder="texto de ejemplo" required/>
                 </div>
                 <div class="movement">
-                    <button class="movButton" id="nextBtn">Siguiente</button>
                     <button class="movButton" type="submit" id="endBtnFinal">Terminar</button>
                 </div>
             </div>
