@@ -50,7 +50,7 @@ class Scrapping:
             sleep(3)
 
             # Poner los filtros de fechas.
-            self.sDate = date(2021, 3, 21)
+            self.sDate = date(2021, 3, 22)
             start_filter_date = "document.getElementById('startDate').setAttribute('value', '{filter}')".format(filter=str(self.sDate))
             end_filter_date = "document.getElementById('endDate').setAttribute('value', '{filter}')".format(filter=str(self.sDate))
             self.Driver.execute_script(start_filter_date)
@@ -66,6 +66,7 @@ class Scrapping:
             sleep(2)
 
         filePath = "/Users/goldenfield/Documents/Backups/Contabilidad/Cedulas/{fileName}-RH.csv".format(fileName=str(self.sDate))
+        #filePath = "/Users/goldenfield/Documents/Backups/Contabilidad/Cedulas/{fileName}-RH.csv".format(fileName=str(self.sDate))
         logData = pd.DataFrame(datalist)
         logData.to_csv(filePath, header=True, index=False, index_label=False, encoding='utf-8-sig')
 
